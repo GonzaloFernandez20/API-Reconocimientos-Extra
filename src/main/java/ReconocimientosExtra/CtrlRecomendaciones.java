@@ -1,6 +1,8 @@
 package ReconocimientosExtra;
 
 import ReconocimientosExtra.Modelo.ColaboradorRecomendado;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/ConsultarRecomendaciones")
+@Tag(name = "API_DDS", description = "Servicio 2: Reconocimientos Extra")
 public class CtrlRecomendaciones {
 
     private final RecomendadorDeColaboraciones recomendadorDeColaboraciones;
@@ -21,7 +24,8 @@ public class CtrlRecomendaciones {
         this.recomendadorDeColaboraciones = recomendadorDeColaboraciones;
     }
 
-
+    @Operation(summary = "Devolver lista de colaboradores a ser reconocidos por otras empresas, junto con el puntaje que obtuvo cada uno hasta el momento",
+            description = "Devuelve una lista de ColaboradorRecomendado, que tiene nombre, apellido, direccion, puntos y medios de contacto")
     @GetMapping
     public ResponseEntity<List<ColaboradorRecomendado>> consultarRecomendaciones(
             @RequestParam int minimoDePuntos,

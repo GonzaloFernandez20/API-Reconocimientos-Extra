@@ -19,4 +19,5 @@ public class ColaboradorRecomendado {
     private Direccion direccion;
     private List<MedioDeContacto> mediosDeContacto;
 
+
 }
