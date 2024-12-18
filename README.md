@@ -18,3 +18,7 @@ Las empresas especificarán los siguientes requisitos para seleccionar a los col
 
 ### **Resultado**
 El sistema devolverá una lista de colaboradores recomendados para ser reconocidos por las empresas, junto con el **puntaje** que obtuvo cada uno hasta el momento.
+
+##Documentación:
+Para acceder a la documentacion de la api con Swagger se requiere levantar el proyecto y acceder a http://localhost:8080/swagger-ui/index.html
+y tener una base de datos configurada y andando ajustando el pom.xml y el aplication.properties al motor y tipo de BD usaos
