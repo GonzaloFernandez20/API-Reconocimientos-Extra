@@ -1,4 +1,5 @@
 package ReconocimientosExtra.Modelo.MedioDeContacto;
 
-public interface MedioDeContacto {
+public abstract class MedioDeContacto {
+
 }

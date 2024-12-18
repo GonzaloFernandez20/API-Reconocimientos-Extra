@@ -22,7 +22,7 @@ public class ColaboradorRepository {
             LEFT JOIN direccion ON persona_humana.direccion = direccion.id_direccion
             LEFT JOIN mail ON mail.colaborador = colaborador.id_colaborador
             LEFT JOIN whats_app ON whats_app.colaborador = colaborador.id_colaborador
-            WHERE puntos_acumulados >= :minimoDePuntos
+            WHERE puntos_acumulados >= :minimoDePuntos AND (SELECT COUNT(v.id_vianda) FROM vianda v WHERE v.colaborador = colaborador.id_colaborador) >= :minimoDeViandas 
             GROUP BY colaborador.puntos_acumulados, persona_humana.nombre, persona_humana.apellido,
                      direccion.calle, direccion.altura, mail.correo, whats_app.nro_de_telefono
         """;
@@ -32,6 +32,7 @@ public class ColaboradorRepository {
 
         // Establecer el parámetro usando setParameter
         nativeQuery.setParameter("minimoDePuntos", minimoDePuntos);
+        nativeQuery.setParameter("minimoDeViandas", minimoDeViandas);
 
         // Ejecutar la consulta
         List<Object[]> resultList = nativeQuery.getResultList();

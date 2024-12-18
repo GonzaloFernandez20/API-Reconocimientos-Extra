@@ -7,6 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class WhatsApp implements MedioDeContacto{
+public class WhatsApp extends MedioDeContacto{
     private String nroDeTelefono;
 }

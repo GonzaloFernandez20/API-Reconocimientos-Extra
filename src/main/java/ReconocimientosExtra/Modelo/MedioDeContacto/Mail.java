@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Mail implements MedioDeContacto{
+public class Mail extends MedioDeContacto{
     private String email;
 }

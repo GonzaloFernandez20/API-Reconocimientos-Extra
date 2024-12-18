@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Telegram implements MedioDeContacto {
+public class Telegram extends MedioDeContacto {
     private String nroDeTelefono;
 
 }
